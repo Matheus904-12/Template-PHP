@@ -1,0 +1,858 @@
+/* Estilos adicionais para os novos elementos */
+.profile-header {
+    text-align: center;
+    margin: 20px auto;
+    /* Centraliza e adiciona margem */
+    padding: 40px;
+    border-bottom: 1px solid #ddd;
+    max-width: 1200px;
+    /* Limita a largura */
+    width: 90%;
+    /* Adiciona margem lateral */
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-info h1 {
+    font-weight: 500;
+    margin: 0;
+}
+
+.profile-info p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.hero1 {
+    margin-top: 14%;
+}
+
+.button-group {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.button-group .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 3px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #000000a1;
+}
+
+.button-group .button.active {
+    background-color: #F3BA00;
+    color: #fff;
+}
+
+.button-group .button:hover {
+    background-color: #F3BA00;
+    color: #fff;
+}
+
+.profile-sections {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 90%;
+    /* Adiciona margem lateral */
+}
+
+.profile-section {
+    display: none;
+    margin-bottom: 40px;
+    width: 100%;
+    /* Garante que a seção ocupe toda a largura disponível */
+}
+
+.profile-section.active {
+    display: block;
+}
+
+.profile-section h3 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.compras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    /* Adiciona margem lateral */
+    margin: 0 auto;
+    /* Centraliza o grid */
+}
+
+.compras-coluna {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 400px; /* Define uma altura máxima */
+    overflow-y: auto; /* Adiciona scroll vertical quando necessário */
+    --webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos touch */
+}
+
+/* Estilizando a scrollbar para webkit browsers */
+.compras-coluna::-webkit-scrollbar {
+    width: 6px;
+}
+
+.compras-coluna::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.compras-coluna::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.compras-coluna::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Estilos para a lista de itens dentro das colunas */
+.item-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    /* para scroll suave */
+    gap: 15px;
+    /* espaço entre os cards */
+    scroll-snap-type: x mandatory;
+    /* faz o scroll parar no card */
+}
+
+.item-lista::-webkit-scrollbar {
+    height: 5px;
+}
+
+.item-lista::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.item-lista::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.item {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.item-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.item-info {
+    flex-grow: 1;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-info h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-subtotal {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-action {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-increase,
+.btn-decrease {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1em;
+}
+
+.btn-remove {
+    background-color: #ffe0e0;
+    color: #d32f2f;
+}
+
+.btn-remove:hover {
+    background-color: #ffcccc;
+}
+
+.btn-cart {
+    background-color: #e0f7fa;
+    color: #00acc1;
+}
+
+.btn-cart:hover {
+    background-color: #b2ebf2;
+}
+
+.cart-total {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e0e0e0;
+}
+
+.cart-total p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.cart-total strong {
+    font-weight: bold;
+}
+
+.btn-checkout {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #43a047;
+}
+
+.empty-message {
+    padding: 15px;
+    text-align: center;
+    color: #777;
+}
+
+.empty-message p {
+    margin-bottom: 10px;
+}
+
+.btn-shop {
+    display: inline-block;
+    background-color: #000;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-shop:hover {
+    background-color: #F3BA00;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-image {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .item-info {
+        padding: 10px;
+    }
+
+    .item-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .btn-action {
+        flex-grow: 1;
+        /* Distribuir espaço igualmente entre os botões */
+        margin-bottom: 5px;
+    }
+
+    .btn-increase,
+    .btn-decrease {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .item-actions {
+        flex-direction: column;
+    }
+}
+
+/* Novas regras para responsividade */
+
+@media (max-width: 768px) {
+    .compras-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .compras-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.profile-section#notificacoes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-section#notificacoes li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.profile-section#senha form,
+.profile-section#meus-dados form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.profile-section#senha label,
+.profile-section#meus-dados label {
+    margin-top: 10px;
+}
+
+.profile-section#senha input,
+.profile-section#meus-dados input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+.profile-section#senha button,
+.profile-section#meus-dados button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #F3BA00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+/* Estilo para o "olho" de visualização de senha */
+.password-container {
+    position: relative;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    padding-right: 30px;
+    border-radius: 15px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.compras-coluna h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo para cada item de pedido */
+.item.pedido {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
+    scroll-snap-align: start;
+}
+
+.item.pedido:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.item.pedido img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.sem-imagem {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #888;
+    margin-right: 15px;
+}
+
+.pedido-info {
+    flex: 1;
+}
+
+.pedido-info h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.pedido-info p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.pedido-total {
+    font-weight: bold;
+    color: #333 !important;
+}
+
+.pedido-rastreio {
+    font-family: monospace;
+    padding: 3px 0;
+}
+
+/* Status do pedido */
+.pedido-status {
+    margin-top: 10px !important;
+}
+
+.pedido-status span {
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-processando {
+    background-color: #ffefd5;
+    color: #d67b00;
+}
+
+.status-aguardando {
+    background-color: #e2f0ff;
+    color: #0066cc;
+}
+
+.status-enviado {
+    background-color: #e6f7ff;
+    color: #007eb9;
+}
+
+.status-entregue {
+    background-color: #e8f8e8;
+    color: #2a9d2a;
+}
+
+.status-cancelado {
+    background-color: #ffe6e6;
+    color: #cc0000;
+}
+
+.status-padrao {
+    background-color: #e8f8e8;
+    color: #2a9d2a;
+}
+
+/* Botão de detalhes */
+.btn-detalhes {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 15px;
+    background-color: #5e35b1;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-detalhes:hover {
+    background-color: #4a2a8c;
+}
+
+/* Mensagem de sem pedidos */
+.sem-pedidos {
+    padding: 30px 0;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .item.pedido {
+        flex-direction: column;
+    }
+
+    .item.pedido img,
+    .sem-imagem {
+        width: 100%;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+.item-price {
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 8px;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    margin-top: 8px;
+    color: #2c3e50;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn-action {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-action i {
+    margin-right: 5px;
+}
+
+.btn-increase, .btn-decrease {
+    background-color: #f1f1f1;
+    color: #333;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.btn-increase:hover, .btn-decrease:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-remove {
+    background-color: #ff5252;
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-remove:hover {
+    background-color: #e74c3c;
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: white;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.toast-success {
+    background-color: #4CAF50;
+}
+
+.toast-error {
+    background-color: #F44336;
+}
+
+.toast-warning {
+    background-color: #FF9800;
+}
+
+.toast.fade-out {
+    opacity: 0;
+}
+
+.quantidade-controle {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantidade-controle button {
+    width: 30px;
+    height: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantidade-controle .number {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* Add this CSS to your profile.css file */
+
+/* Notification System */
+.notification-system {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 300px;
+    font-family: 'Inter', sans-serif;
+}
+
+.notification {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-out;
+    overflow: hidden;
+    border-left: 4px solid #4CAF50;
+}
+
+.notification.error {
+    border-left-color: #F44336;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-content span {
+    flex: 1;
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.notification-close:hover {
+    color: #333;
+}
+
+/* Optional progress bar for notifications */
+.notification::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.notification.success::after {
+    background: #4CAF50;
+    animation: progress-bar 5s linear forwards;
+}
+
+.notification.error::after {
+    background: #F44336;
+    animation: progress-bar 5s linear forwards;
+}
+
+@keyframes progress-bar {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Button styles */
+button[type="submit"] {
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+}
+
+button[type="submit"].loading::after {
+    width: 100%;
+    animation: button-loading 1.5s infinite;
+}
+
+@keyframes button-loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #777;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+

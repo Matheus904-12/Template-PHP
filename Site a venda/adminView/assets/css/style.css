@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+}
+
+/* Scrollbar estilizada para navegadores WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e; /* Fundo escuro indigo */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f7d; /* Tom de índigo mais escuro */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5757a3; /* Um tom um pouco mais claro ao passar o mouse */
+}
+
+
+.user-cart span {
+  padding-right: 3px;
+  padding-left: 3px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-left: -1.2rem;
+}
+
+.user-cart {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.user-cart a {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+
+/*********** admin dashboard styling **********/
+
+/************************** for sidebar ***********************************/
+
+/************************** Sidebar Styling ***************************/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: width 0.4s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar header */
+.sidebar .side-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.sidebar .side-header img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .side-header img:hover {
+  transform: scale(1.1);
+}
+
+.sidebar .side-header h5 {
+  color: #e2e8f0;
+  font-size: 16px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #cbd5e1;
+  transition: all 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.sidebar a i {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* Close button */
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 34px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar .closebtn:hover {
+  color: #f87171;
+}
+
+
+#main {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1050;
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 0;
+    padding: 0;
+  }
+  
+  #main-content {
+    margin-left: 0;
+  }
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Navbar Styling */
+.navbar {
+  background: #000322 !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Estilos para os alertas personalizados */
+.custom-alert-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.custom-alert {
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.4s ease-out, fadeOut 0.4s ease-out 2.6s;
+  max-width: 350px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-alert::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  animation: timeoutBar 3s linear;
+}
+
+.custom-alert.success {
+  border-left: 4px solid #10b981;
+}
+
+.custom-alert.success::before {
+  background-color: #10b981;
+}
+
+.custom-alert.error {
+  border-left: 4px solid #ef4444;
+}
+
+.custom-alert.error::before {
+  background-color: #ef4444;
+}
+
+.custom-alert.info {
+  border-left: 4px solid #3b82f6;
+}
+
+.custom-alert.info::before {
+  background-color: #3b82f6;
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1f2937;
+}
+
+.alert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.success .alert-icon {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.error .alert-icon {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.info .alert-icon {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 12px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.alert-close:hover {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  to {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+}
+
+@keyframes timeoutBar {
+  from {
+      width: 100%;
+  }
+  to {
+      width: 0;
+  }
+}
+

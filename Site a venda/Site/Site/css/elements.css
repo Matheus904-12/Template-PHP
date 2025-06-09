@@ -1,0 +1,977 @@
+/* ----- POPPINS FONT Link ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+
+
+/* Reset geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* CSS para folhas ao vento - Tema Cristais Gold Lar */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #f9f8f0 0%, #fffef5 50%, #f9f5e8 100%);
+    position: relative;
+}
+
+/* Folhas estilizadas - diferentes formatos */
+.leaf {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.6;
+    will-change: transform;
+}
+
+.leaf-1 {
+    width: 30px;
+    height: 50px;
+    background: linear-gradient(120deg, rgba(126, 191, 73, 0.3) 0%, rgba(103, 173, 56, 0.2) 100%);
+    border-radius: 50% 20% 50% 20%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.leaf-2 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(120deg, rgba(152, 203, 88, 0.3) 0%, rgba(119, 184, 42, 0.2) 100%);
+    border-radius: 50% 50% 50% 5%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.leaf-3 {
+    width: 35px;
+    height: 60px;
+    background: linear-gradient(120deg, rgba(170, 215, 107, 0.3) 0%, rgba(142, 199, 65, 0.2) 100%);
+    border-radius: 60% 40% 60% 40%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Caule da folha */
+.leaf::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(142, 167, 62, 0.5), rgba(142, 167, 62, 0.2));
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Nervura da folha */
+.leaf::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 70%;
+    background: linear-gradient(to bottom, rgba(142, 167, 62, 0.2), rgba(142, 167, 62, 0.5));
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Animações para folhas - movimento ao vento */
+@keyframes floating {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-15px) translateX(10px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-5px) translateX(20px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-10px) translateX(10px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(0deg) translateX(0px);
+    }
+
+    25% {
+        transform: rotate(8deg) translateX(10px);
+    }
+
+    50% {
+        transform: rotate(0deg) translateX(20px);
+    }
+
+    75% {
+        transform: rotate(-8deg) translateX(10px);
+    }
+
+    100% {
+        transform: rotate(0deg) translateX(0px);
+    }
+}
+
+@keyframes drifting {
+    0% {
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+
+    20% {
+        transform: translateX(100px) translateY(20px) rotate(40deg);
+    }
+
+    40% {
+        transform: translateX(200px) translateY(0px) rotate(80deg);
+    }
+
+    60% {
+        transform: translateX(300px) translateY(-20px) rotate(120deg);
+    }
+
+    80% {
+        transform: translateX(400px) translateY(0px) rotate(160deg);
+    }
+
+    100% {
+        transform: translateX(500px) translateY(20px) rotate(200deg);
+    }
+}
+
+/* Overlay sutíl dourado para combinar com o tema "Gold" */
+.golden-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(255, 236, 179, 0) 0%, rgba(255, 223, 128, 0.05) 100%);
+    pointer-events: none;
+    z-index: -100;
+}
+
+/* Tela de carregamento */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-screen.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 8px solid #F3BA00;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efeito de zoom-in ao carregar */
+.zoom-in {
+    transform: scale(1.2);
+    opacity: 0;
+}
+
+.loaded .zoom-in {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Efeito de surgimento ao rolar */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.scroll-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Para WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 6px;
+    /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Cor de fundo da trilha da barra de rolagem */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F3BA00;
+    /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000;
+    /* Cor do "polegar" quando o mouse passa sobre ele */
+}
+
+#profile-pic {
+    border-radius: 50%;
+    /* Faz a imagem ficar redonda */
+    width: 40px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 40px;
+    /* Ajuste o tamanho conforme necessário */
+    object-fit: cover;
+    /* Garante que a imagem cubra todo o espaço */
+}
+
+.notification-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    height: -5px;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    opacity: 0;
+    bottom: 3px;
+    transition: opacity 0.5s ease-in-out;
+    font-size: 13px;
+}
+
+@media  (min-width: 320px) and (max-width: 425px) {
+    .message {
+        top: 1px;
+    }
+}
+
+
+.message.active {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .notification-bar {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
+/* Conteúdo de exemplo para o resto da página */
+.content {
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px;
+    border-radius: 55px;
+    backdrop-filter: blur(0px);
+    transition: all 0.3s ease-in-out;
+    margin: 20px 50px;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 55px;
+    top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Menu Hamburguer */
+.menu-hamburguer {
+    display: none;
+    /* Oculta em telas grandes */
+}
+
+/* Menu lateral (inicialmente escondido) */
+.side-menu {
+    display: none;
+}
+
+/* Mostrar menu ao clicar */
+.side-menu.active {
+    display: none;
+}
+
+/* Botão de fechar menu */
+.close-btn {
+    display: none;
+}
+
+/* Estrutura da Navbar */
+.navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    transition: all 0.3s;
+}
+
+/* Links do Menu */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    font-weight: lighter;
+}
+
+.nav-links li a:hover {
+    color: #F3BA00;
+}
+
+/* Logo */
+.logo img {
+    width: 40px;
+}
+
+.logo2 img {
+    width: 220px;
+}
+
+/* Ícones */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.nav-icons span {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    font-weight: lighter;
+}
+
+.nav-icons span:hover {
+    color: #F3BA00;
+}
+
+.nav-icons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.nav-icons img {
+    width: 30px;
+    transition: all 0.3s;
+}
+
+.nav-icons a:hover {
+    color: #F3BA00;
+}
+
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* Ajuste conforme a altura da navbar */
+}
+
+/* Ajuste da setinha */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 14px;
+    margin-left: 5px;
+    scale: 60%;
+}
+
+/* Quando o dropdown estiver ativo, gira a setinha para baixo */
+.dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* Estilização do Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown span {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden;
+}
+
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+
+.dropdown-menu button {
+    background: #f5f5f5;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.dropdown-menu button:hover {
+    background: #ddd;
+}
+
+/* ----- SCROLL ----- */
+
+.scroll-btn {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 175px;
+    height: 50px;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--text-color-second);
+    background: var(--color-white);
+    border-radius: 30px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+
+.scroll-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.scroll-btn::after {
+    background-color: #fff;
+}
+
+.scroll-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* Correção no texto */
+.scroll-btn p {
+    margin: 0;
+    /* Remove qualquer espaçamento interno */
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+
+.scroll-btn i {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícones Sociais */
+.social-icons {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+/* Botão WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.whatsapp-btn img {
+    width: 55px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Fundo Principal com Sombra */
+.background-container {
+    background: #f3f3f3;
+    max-width: 95%;
+    /* Define um tamanho máximo */
+    min-height: 100%;
+    /* Mantém a altura adaptável */
+    margin: 40px auto;
+    /* Centraliza e dá espaçamento */
+    padding: 0px;
+    border-radius: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* Sombra para efeito flutuante */
+    position: relative;
+}
+
+/* Footer */
+footer {
+    color: #f5f5f5;
+    max-width: 2000px;
+    border-radius: 50px;
+    margin: 30px auto 0 auto;
+    /* Alinha com o container principal */
+    padding: 0px;
+    overflow: hidden;
+}
+
+.link {
+    text-decoration: none;
+}
+
+#content {
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+#content h1 {
+    margin-bottom: 0.75rem;
+}
+
+#social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#social_media .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #f5f5f5;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#social_media .link i {
+    font-size: 1.25rem;
+}
+
+#social_media .link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: #242424;
+}
+
+#facebook {
+    background-color: #242424;
+}
+
+#whatsapp {
+    background-color: #242424;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.list .link {
+    color: #a8a29e;
+    transition: all 0.4s;
+}
+
+.list .link:hover {
+    color: #F3BA00;
+}
+
+#subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#subscribe p {
+    color: #a8a29e;
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #F3BA00;
+    border: none;
+    color: #f5f5f5;
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* Logo */
+    .logo img {
+        width: 40px;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+
+
+
+/* Área do perfil/login */
+
+
+/* Media queries para responsividade específica entre 320px e 768px */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .mobile-menu {
+        width: 100%;
+        max-width: none;
+        border-radius: 20px 20px 0 0;
+        top: unset;
+        bottom: -100%;
+        height: 70vh;
+        right: 0;
+    }
+
+    .mobile-menu.active {
+        bottom: 0;
+        right: 0;
+    }
+
+    .close-btn {
+        font-size: 28px;
+        top: 12px;
+        right: 15px;
+    }
+
+    .mobile-menu #mobile-profile-btn {
+        gap: 8px;
+    }
+
+    .mobile-menu #profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile-toggle {
+        font-size: 14px;
+    }
+
+    .mobile-nav-links a {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+
+    .dropdown-menu a,
+    .dropdown-menu button {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .mobile-menu .dropdown {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .mobile-menu #mobile-profile-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #333;
+        padding: 10px 0;
+    }
+
+    .mobile-menu #profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-toggle {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .dropdown-menu a,
+    .dropdown-menu button {
+        padding: 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+        transition: background-color 0.2s;
+        color: black;
+        font-weight: bold;
+    }
+
+
+    .dropdown-menu .google-login,
+    .dropdown-menu .facebook-login {
+        background: #f1f1f1;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .dropdown-menu .google-login:hover,
+    .dropdown-menu .facebook-login:hover {
+        background: #e5e5e5;
+    }
+}
+
+/* Ajustes adicionais para telas muito pequenas */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .mobile-menu {
+        padding: 20px 12px;
+        gap: 20px;
+        height: 80vh;
+    }
+
+    .mobile-menu #profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+
+    .profile-toggle {
+        font-size: 13px;
+    }
+
+    .mobile-nav-links a {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+
+    .mobile-menu .dropdown {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .mobile-menu #mobile-profile-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #333;
+        padding: 10px 0;
+    }
+
+    .mobile-menu #profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-toggle {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .dropdown-menu a,
+    .dropdown-menu button {
+        padding: 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        text-align: center;
+        transition: background-color 0.2s;
+    }
+
+
+
+    .dropdown-menu .google-login,
+    .dropdown-menu .facebook-login {
+        background: #f1f1f1;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .dropdown-menu .google-login:hover,
+    .dropdown-menu .facebook-login:hover {
+        background: #e5e5e5;
+    }
+}

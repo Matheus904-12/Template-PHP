@@ -1,0 +1,1769 @@
+/* Media 320 - Celular Pequeno */
+@media screen and (min-width: 320px) and (max-width: 374px) {
+
+
+    html,
+    body {
+        height: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .body-container {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0 20px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        margin: 20px 15px;
+        height: 70px;
+        justify-content: space-between;
+        /* Alinha os itens com espaçamento entre eles */
+        border: 2px solid #d3d3d3a1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar.scrolled {
+        border-radius: 20px;
+    }
+
+    /* Estrutura da Navbar */
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        transition: all 0.3s;
+    }
+
+    /* Logo */
+    .logo img {
+        width: 32px;
+        order: 1;
+        margin-top: 15%;
+    }
+
+    /* Exibir o menu hambúrguer */
+    .menu-hamburguer {
+        display: block;
+        cursor: pointer;
+        order: 2;
+        margin-top: 3%;
+    }
+
+    /* Estilo do menu hamburguer */
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .hamburger input {
+        display: none;
+        /* Esconde o checkbox */
+    }
+
+    .hamburger svg {
+        height: 3em;
+        /* Tamanho do SVG */
+        width: 3em;
+        /* Tamanho do SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        /* Animação de transformação */
+    }
+
+    .line {
+        fill: none;
+        stroke: black;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        transition:
+            stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
+        stroke-dasharray: 12 63;
+    }
+
+    /* Quando o input estiver checado (menu aberto) */
+    .hamburger input:checked+svg {
+        transform: rotate(-45deg);
+        /* Rotaciona o SVG */
+    }
+
+    .hamburger input:checked+svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+    }
+
+
+    .nav-links,
+    .nav-icons {
+        display: none;
+    }
+
+    /* Menu Mobile (escondido por padrão) */
+    .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: -110%;
+        width: 100%;
+        height: 80;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+        backdrop-filter: blur(100px);
+        transition: right 0.3s ease-in-out;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 2px solid #d3d3d3a1;
+        border-radius: 20px;
+    }
+
+    /* Mostrar menu ao clicar */
+    .mobile-menu.active {
+        right: 0;
+        background: rgba(255, 255, 255, 0.911);
+        backdrop-filter: blur(1000px);
+    }
+
+    /* Botão de fechar menu */
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Estilizar itens do menu mobile */
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-nav-links li {
+        margin: 15px 0;
+    }
+
+    .mobile-nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Ícones do menu mobile */
+    .mobile-nav-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Ajuste da setinha */
+    .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 14px;
+        margin-left: 5px;
+        scale: 60%;
+    }
+
+    /* Quando o dropdown estiver ativo, gira a setinha para baixo */
+    .dropdown.active .arrow {
+        transform: rotate(180deg);
+    }
+
+
+    /* Estilização do Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown span {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 180px;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        visibility: hidden;
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+
+    .dropdown-menu button {
+        background: #f5f5f5;
+        border: none;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+    .dropdown-menu button:hover {
+        background: #ddd;
+    }
+
+
+
+    /* Inicio */
+
+
+
+    .hero-content h1 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        color: gray;
+        scale: 95%;
+    }
+
+    /* ----- SCROLL ----- */
+
+    .scroll-btn {
+        width: 45px;
+        height: 50px;
+    }
+
+    /* Correção no texto */
+    .scroll-btn p {
+        display: none;
+    }
+
+
+
+    /* Ícones Sociais */
+    .social-icons {
+        display: none;
+    }
+
+
+    /* Botão WhatsApp */
+    .whatsapp-btn {
+        position: fixed !important;
+        bottom: 40px;
+        right: 20px;
+        padding: 12px;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .whatsapp-btn img {
+        width: 55px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* Fundo Principal com Sombra */
+    .background-container {
+        max-width: 92%;
+        /* Define um tamanho máximo */
+        min-height: 100%;
+        margin-top: -110px;
+        padding-bottom: 15px;
+    }
+
+    /* Seção Sobre Nós */
+    .sobre-nos {
+        display: flex;
+        flex-direction: column;
+        /* Organiza os elementos verticalmente */
+        align-items: center;
+        /* Centraliza os elementos na horizontal */
+        justify-content: center;
+        /* Centraliza os elementos na vertical */
+        gap: 20px;
+        /* Ajuste o espaçamento entre os elementos */
+        padding: 1%;
+    }
+
+    /* Texto */
+    .sobre-nos .texto {
+        width: 85%;
+        /* Ajuste a largura para centralizar melhor o texto */
+        text-align: center;
+        /* Centraliza o texto */
+        padding: 30px 0 0px 0;
+    }
+
+    .sobre-nos h2 {
+        font-size: 25px;
+        font-weight: 550;
+        top: 20px;
+    }
+
+    .sobre-nos h2::after {
+        width: 100%;
+    }
+
+    .sobre-nos p {
+        font-size: 14px;
+        margin-top: 45px;
+    }
+
+    /* Imagem */
+    .sobre-nos .imagem {
+        width: 90%;
+        height: 150px;
+        background: #d3d3d3;
+        border-radius: 12px;
+    }
+
+
+
+    /* Produtos */
+    .produtos {
+        padding: 1%;
+        border-radius: 10px;
+        max-width: 100%;
+        margin-top: 50px;
+    }
+
+    .produtos h2 {
+        font-size: 25px;
+        font-weight: 550;
+
+    }
+
+    .produtos h2::after {
+        width: 60.5%;
+    }
+
+    .produtos p {
+        font-size: 14px;
+    }
+
+    .button-group {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .button-group .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #ffffff;
+        color: #F3BA00;
+        font-style: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        cursor: pointer;
+        border: 2px solid #000000a1;
+    }
+
+    .button-group .button.active {
+        background-color: #F3BA00;
+        color: #fff;
+    }
+
+    .button-group .button:hover {
+        background-color: #F3BA00;
+        color: #fff;
+    }
+
+    .container {
+        max-width: 1400px;
+        width: 300px;
+        padding: 60px 0;
+    }
+
+
+    .swiper-navBtn {
+        display: none;
+        scale: 70%;
+    }
+
+
+
+    /* Seção de Pagamento */
+
+    .pagamento {
+        padding: 5%; /* Pode ser reduzido se necessário */
+        margin: 50px auto; /* Centraliza o contêiner horizontalmente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Ou uma largura específica */
+    }
+
+    /* Título */
+    .pagamento h2 {
+        font-size: 25px;
+        font-weight: 550;
+        text-align: center;
+    }
+
+    .pagamento h2::after {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    /* Texto */
+    .pagamento p {
+        padding: 4%;
+        font-size: 13px;
+        font-weight: 75;
+        text-align: center;
+        justify-content: center;
+        max-width: 1000px;
+    }
+
+    .bandeiras-pagamento {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+        max-width: 400px;
+        top: 20px;
+        scale: 70%;
+    }
+
+    /* Ícones e Descrições */
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        flex-direction: column;
+        /* Ícone acima do texto */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .info-box img.icon {
+        width: 119px;
+        height: 116px;
+    }
+
+    .info-box .info-text p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .divider {
+        width: 100%;
+        /* Torna a linha horizontal */
+        height: 2px;
+        /* Define altura mínima para parecer uma linha */
+        align-self: center;
+        margin: 20px 0;
+        /* Espaçamento para separação */
+    }
+}
+
+/* Media 375 - Celular Médio */
+@media screen and (min-width: 375px) and (max-width: 766px) {
+
+    html,
+    body {
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .body-container {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0 20px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        margin: 20px 15px;
+        height: 70px;
+        justify-content: space-between;
+        /* Alinha os itens com espaçamento entre eles */
+        border: 2px solid #d3d3d3a1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar.scrolled {
+        border-radius: 20px;
+    }
+
+    /* Estrutura da Navbar */
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        transition: all 0.3s;
+    }
+
+    /* Logo */
+    .logo img {
+        width: 32px;
+        order: 1;
+        margin-top: 15%;
+    }
+
+    /* Exibir o menu hambúrguer */
+    .menu-hamburguer {
+        display: block;
+        cursor: pointer;
+        order: 2;
+        margin-top: 3%;
+    }
+
+    /* Estilo do menu hamburguer */
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .hamburger input {
+        display: none;
+        /* Esconde o checkbox */
+    }
+
+    .hamburger svg {
+        height: 3em;
+        /* Tamanho do SVG */
+        width: 3em;
+        /* Tamanho do SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        /* Animação de transformação */
+    }
+
+    .line {
+        fill: none;
+        stroke: black;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        transition:
+            stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
+        stroke-dasharray: 12 63;
+    }
+
+    /* Quando o input estiver checado (menu aberto) */
+    .hamburger input:checked+svg {
+        transform: rotate(-45deg);
+        /* Rotaciona o SVG */
+    }
+
+    .hamburger input:checked+svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+    }
+
+
+    .nav-links,
+    .nav-icons {
+        display: none;
+    }
+
+    /* Menu Mobile (escondido por padrão) */
+    .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: -110%;
+        width: 100%;
+        height: 80;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+        backdrop-filter: blur(100px);
+        transition: right 0.3s ease-in-out;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 2px solid #d3d3d3a1;
+        border-radius: 20px;
+    }
+
+    /* Mostrar menu ao clicar */
+    .mobile-menu.active {
+        right: 0;
+        background: rgba(255, 255, 255, 0.911);
+        backdrop-filter: blur(1000px);
+    }
+
+    /* Botão de fechar menu */
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Estilizar itens do menu mobile */
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-nav-links li {
+        margin: 15px 0;
+    }
+
+    .mobile-nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Ícones do menu mobile */
+    .mobile-nav-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Ajuste da setinha */
+    .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 14px;
+        margin-left: 5px;
+        scale: 60%;
+    }
+
+    /* Quando o dropdown estiver ativo, gira a setinha para baixo */
+    .dropdown.active .arrow {
+        transform: rotate(180deg);
+    }
+
+
+    /* Estilização do Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown span {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 180px;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        visibility: hidden;
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+
+    .dropdown-menu button {
+        background: #f5f5f5;
+        border: none;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+    .dropdown-menu button:hover {
+        background: #ddd;
+    }
+
+
+
+    /* Inicio */
+
+
+    .hero-content h1 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        color: gray;
+        scale: 95%;
+    }
+
+    /* ----- SCROLL ----- */
+
+    .scroll-btn {
+        width: 45px;
+        height: 50px;
+    }
+
+    /* Correção no texto */
+    .scroll-btn p {
+        display: none;
+    }
+
+
+
+    /* Ícones Sociais */
+    .social-icons {
+        display: none;
+    }
+
+
+    /* Botão WhatsApp */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        padding: 12px;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .whatsapp-btn img {
+        width: 55px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* Fundo Principal com Sombra */
+    .background-container {
+        max-width: 92%;
+        /* Define um tamanho máximo */
+        min-height: 100%;
+        margin-top: -110px;
+        padding-bottom: 15px;
+    }
+
+    /* Seção Sobre Nós */
+    .sobre-nos {
+        display: flex;
+        flex-direction: column;
+        /* Organiza os elementos verticalmente */
+        align-items: center;
+        /* Centraliza os elementos na horizontal */
+        justify-content: center;
+        /* Centraliza os elementos na vertical */
+        gap: 20px;
+        /* Ajuste o espaçamento entre os elementos */
+        padding: 1%;
+    }
+
+    /* Texto */
+    .sobre-nos .texto {
+        width: 85%;
+        /* Ajuste a largura para centralizar melhor o texto */
+        text-align: center;
+        /* Centraliza o texto */
+        padding: 30px 0 0px 0;
+    }
+
+    .sobre-nos h2 {
+        font-size: 25px;
+        font-weight: 550;
+        top: 20px;
+    }
+
+    .sobre-nos h2::after {
+        width: 100%;
+    }
+
+    .sobre-nos p {
+        font-size: 14px;
+        margin-top: 45px;
+    }
+
+    /* Imagem */
+    .sobre-nos .imagem {
+        width: 90%;
+        height: 150px;
+        background: #d3d3d3;
+        border-radius: 12px;
+    }
+
+    /* Seção de Pagamento */
+
+    .pagamento {
+        padding: 0%;
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    /* Título */
+    .pagamento h2 {
+        padding: 5%;
+        font-size: 25px;
+        font-weight: 550;
+        text-align: center;
+    }
+
+    .pagamento h2::after {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    /* Texto */
+    .pagamento p {
+        padding: 4%;
+        font-size: 13px;
+        font-weight: 75;
+        text-align: center;
+        justify-content: center;
+        max-width: 1000px;
+    }
+
+    .bandeiras-pagamento {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+        max-width: 400px;
+        top: 20px;
+        scale: 80%;
+    }
+
+    /* Ícones e Descrições */
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        flex-direction: column;
+        /* Ícone acima do texto */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .info-box img.icon {
+        width: 119px;
+        height: 116px;
+    }
+
+    .info-box .info-text p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .divider {
+        width: 100%;
+        /* Torna a linha horizontal */
+        height: 2px;
+        /* Define altura mínima para parecer uma linha */
+        align-self: center;
+        margin: 20px 0;
+        /* Espaçamento para separação */
+    }
+}
+
+/* Media 426 - Celular Grande */
+@media screen and (min-width: 426px) and (max-width: 767px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 0 20px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        margin: 20px 15px;
+        height: 70px;
+        justify-content: space-between;
+        /* Alinha os itens com espaçamento entre eles */
+        border: 2px solid #d3d3d3a1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar.scrolled {
+        border-radius: 20px;
+    }
+
+    /* Estrutura da Navbar */
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        transition: all 0.3s;
+    }
+
+    /* Logo */
+    .logo img {
+        width: 32px;
+        order: 1;
+        margin-top: 15%;
+    }
+
+    /* Exibir o menu hambúrguer */
+    .menu-hamburguer {
+        display: block;
+        cursor: pointer;
+        order: 2;
+        margin-top: 3%;
+    }
+
+    /* Estilo do menu hamburguer */
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .hamburger input {
+        display: none;
+        /* Esconde o checkbox */
+    }
+
+    .hamburger svg {
+        height: 3em;
+        /* Tamanho do SVG */
+        width: 3em;
+        /* Tamanho do SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        /* Animação de transformação */
+    }
+
+    .line {
+        fill: none;
+        stroke: black;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        transition:
+            stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
+        stroke-dasharray: 12 63;
+    }
+
+    /* Quando o input estiver checado (menu aberto) */
+    .hamburger input:checked+svg {
+        transform: rotate(-45deg);
+        /* Rotaciona o SVG */
+    }
+
+    .hamburger input:checked+svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+    }
+
+
+    .nav-links,
+    .nav-icons {
+        display: none;
+    }
+
+    /* Menu Mobile (escondido por padrão) */
+    .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: -110%;
+        width: 100%;
+        height: 80;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+        backdrop-filter: blur(100px);
+        transition: right 0.3s ease-in-out;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 2px solid #d3d3d3a1;
+        border-radius: 20px;
+    }
+
+    /* Mostrar menu ao clicar */
+    .mobile-menu.active {
+        right: 0;
+        background: rgba(255, 255, 255, 0.911);
+        backdrop-filter: blur(1000px);
+    }
+
+    /* Botão de fechar menu */
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Estilizar itens do menu mobile */
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-nav-links li {
+        margin: 15px 0;
+    }
+
+    .mobile-nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Ícones do menu mobile */
+    .mobile-nav-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Ajuste da setinha */
+    .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 14px;
+        margin-left: 5px;
+        scale: 60%;
+    }
+
+    /* Quando o dropdown estiver ativo, gira a setinha para baixo */
+    .dropdown.active .arrow {
+        transform: rotate(180deg);
+    }
+
+
+    /* Estilização do Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown span {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 180px;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        visibility: hidden;
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+
+    .dropdown-menu button {
+        background: #f5f5f5;
+        border: none;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+    .dropdown-menu button:hover {
+        background: #ddd;
+    }
+
+
+
+    /* Inicio */
+
+    .hero-content {
+        margin-bottom: 55%;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        color: gray;
+        scale: 95%;
+    }
+
+    /* ----- SCROLL ----- */
+
+    .scroll-btn {
+        width: 45px;
+        height: 50px;
+        margin-bottom: 25%;
+    }
+
+    /* Correção no texto */
+    .scroll-btn p {
+        display: none;
+    }
+
+
+
+    /* Ícones Sociais */
+    .social-icons {
+        display: none;
+    }
+
+
+    /* Botão WhatsApp */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        padding: 12px;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .whatsapp-btn img {
+        width: 55px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* Fundo Principal com Sombra */
+    .background-container {
+        max-width: 92%;
+        /* Define um tamanho máximo */
+        min-height: 100%;
+        margin-top: -110px;
+        padding-bottom: 15px;
+    }
+
+    /* Seção Sobre Nós */
+    .sobre-nos {
+        display: flex;
+        flex-direction: column;
+        /* Organiza os elementos verticalmente */
+        align-items: center;
+        /* Centraliza os elementos na horizontal */
+        justify-content: center;
+        /* Centraliza os elementos na vertical */
+        gap: 20px;
+        /* Ajuste o espaçamento entre os elementos */
+        padding: 1%;
+    }
+
+    /* Texto */
+    .sobre-nos .texto {
+        width: 85%;
+        /* Ajuste a largura para centralizar melhor o texto */
+        text-align: center;
+        /* Centraliza o texto */
+        padding: 30px 0 0px 0;
+    }
+
+    .sobre-nos h2 {
+        font-size: 25px;
+        font-weight: 550;
+        top: 20px;
+    }
+
+    .sobre-nos h2::after {
+        width: 100%;
+    }
+
+    .sobre-nos p {
+        font-size: 14px;
+        margin-top: 45px;
+    }
+
+    /* Imagem */
+    .sobre-nos .imagem {
+        width: 90%;
+        height: 150px;
+        background: #d3d3d3;
+        border-radius: 12px;
+    }
+
+
+
+    /* Produtos */
+    .produtos {
+        padding: 1%;
+        border-radius: 10px;
+        max-width: 100%;
+        margin-top: 50px;
+    }
+
+    .produtos h2 {
+        font-size: 25px;
+        font-weight: 550;
+
+    }
+
+    .produtos h2::after {
+        width: 60.5%;
+    }
+
+    .produtos p {
+        font-size: 14px;
+        font-weight: 75;
+    }
+
+    .button-group {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .button-group .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #ffffff;
+        color: #F3BA00;
+        font-style: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        cursor: pointer;
+        border: 2px solid #000000a1;
+    }
+
+    .button-group .button.active {
+        background-color: #F3BA00;
+        color: #fff;
+    }
+
+    .button-group .button:hover {
+        background-color: #F3BA00;
+        color: #fff;
+    }
+
+    .container {
+        max-width: 1400px;
+        width: 300px;
+        padding: 60px 0;
+    }
+
+
+    .swiper-navBtn {
+        display: none;
+        scale: 70%;
+    }
+
+
+
+    /* Seção de Pagamento */
+
+    .pagamento {
+        padding: 0%;
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    /* Título */
+    .pagamento h2 {
+        font-size: 25px;
+        font-weight: 550;
+        text-align: center;
+    }
+
+    .pagamento h2::after {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    /* Texto */
+    .pagamento p {
+        padding: 4%;
+        font-size: 13px;
+        font-weight: 75;
+        text-align: center;
+        justify-content: center;
+        max-width: 1000px;
+    }
+
+    /* Ícones e Descrições */
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        flex-direction: column;
+        /* Ícone acima do texto */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .info-box img.icon {
+        width: 119px;
+        height: 116px;
+    }
+
+    .info-box .info-text p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .divider {
+        width: 100%;
+        /* Torna a linha horizontal */
+        height: 2px;
+        /* Define altura mínima para parecer uma linha */
+        align-self: center;
+        margin: 20px 0;
+        /* Espaçamento para separação */
+    }
+}
+
+/* Media 768 - Tablet */
+@media screen and (max-width: 768px) {
+    #content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0 20px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        margin: 20px 15px;
+        height: 70px;
+        justify-content: space-between;
+        /* Alinha os itens com espaçamento entre eles */
+        border: 2px solid #d3d3d3a1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar.scrolled {
+        border-radius: 20px;
+    }
+
+    /* Estrutura da Navbar */
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        transition: all 0.3s;
+    }
+
+    /* Logo */
+    .logo img {
+        width: 32px;
+        order: 1;
+        margin-top: 15%;
+    }
+
+    /* Exibir o menu hambúrguer */
+    .menu-hamburguer {
+        display: block;
+        cursor: pointer;
+        order: 2;
+        margin-top: 1%;
+    }
+
+    /* Estilo do menu hamburguer */
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .hamburger input {
+        display: none;
+        /* Esconde o checkbox */
+    }
+
+    .hamburger svg {
+        height: 3em;
+        /* Tamanho do SVG */
+        width: 3em;
+        /* Tamanho do SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        /* Animação de transformação */
+    }
+
+    .line {
+        fill: none;
+        stroke: black;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        transition:
+            stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
+        stroke-dasharray: 12 63;
+    }
+
+    /* Quando o input estiver checado (menu aberto) */
+    .hamburger input:checked+svg {
+        transform: rotate(-45deg);
+        /* Rotaciona o SVG */
+    }
+
+    .hamburger input:checked+svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+    }
+
+
+    .nav-links,
+    .nav-icons {
+        display: none;
+    }
+
+    /* Menu Mobile (escondido por padrão) */
+    .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: -110%;
+        width: 100%;
+        height: 80;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+        backdrop-filter: blur(100px);
+        transition: right 0.3s ease-in-out;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 2px solid #d3d3d3a1;
+        border-radius: 20px;
+    }
+
+    /* Mostrar menu ao clicar */
+    .mobile-menu.active {
+        right: 0;
+        background: rgba(255, 255, 255, 0.911);
+        backdrop-filter: blur(1000px);
+    }
+
+    /* Botão de fechar menu */
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Estilizar itens do menu mobile */
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-nav-links li {
+        margin: 15px 0;
+    }
+
+    .mobile-nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Ícones do menu mobile */
+    .mobile-nav-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Ajuste da setinha */
+    .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 14px;
+        margin-left: 5px;
+        scale: 60%;
+    }
+
+    /* Quando o dropdown estiver ativo, gira a setinha para baixo */
+    .dropdown.active .arrow {
+        transform: rotate(180deg);
+    }
+
+
+    /* Estilização do Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dropdown span {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 180px;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        visibility: hidden;
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+
+    .dropdown-menu button {
+        background: #f5f5f5;
+        border: none;
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+    .dropdown-menu button:hover {
+        background: #ddd;
+    }
+
+    /* Seção Sobre Nós */
+    .sobre-nos {
+        display: flex;
+        flex-direction: column;
+        /* Organiza os elementos verticalmente */
+        align-items: center;
+        /* Centraliza os elementos na horizontal */
+        justify-content: center;
+        /* Centraliza os elementos na vertical */
+        gap: 20px;
+        /* Ajuste o espaçamento entre os elementos */
+        padding: 1%;
+    }
+
+    /* Texto */
+    .sobre-nos .texto {
+        width: 85%;
+        /* Ajuste a largura para centralizar melhor o texto */
+        text-align: center;
+        /* Centraliza o texto */
+        padding: 30px 0 0px 0;
+    }
+
+    .sobre-nos h2 {
+        top: 20px;
+    }
+
+    .sobre-nos h2::after {
+        width: 100%;
+    }
+
+    .sobre-nos p {
+        margin-top: 45px;
+    }
+
+    /* Imagem */
+    .sobre-nos .imagem {
+        width: 90%;
+        height: 200px;
+        background: #d3d3d3;
+        border-radius: 12px;
+    }
+
+    /* Seção de Pagamento */
+
+    .pagamento {
+        font-size: 25px;
+        font-weight: 75;
+        padding: 5%;
+        justify-content: center;
+    }
+
+    .produtos h2 {
+        font-size: 25px;
+        font-weight: 550;
+
+    }
+
+    .pagamento h2::after {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .bandeiras-pagamento {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+        max-width: 400px;
+        position: relative; /* Necessário para top funcionar */
+        top: 40px; /* Ajuste conforme necessário para subir */
+        transform: scale(0.7); /* Melhor que scale: 70% */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        justify-content: center; /* Garante alinhamento dos itens */
+        align-items: center;
+        scale: 140%;
+    }
+    
+
+    /* Ícones e Descrições */
+
+    .info-box {
+        flex-direction: column;
+        /* Ícone acima do texto */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .info-box img.icon {
+        width: 119px;
+        height: 116px;
+    }
+
+    .info-box .info-text p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+}
+
+/* Ajustes do Celular Grande */
+@media screen and (max-width: 426px) {
+    #content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+}
+
+/* Media da tela galeria */
+@media(max-width: 1024px) {
+    div.gallery .item {
+        width: calc(50% - 8px);
+    }
+}
+
+@media(max-width: 600px) {
+    div.gallery .item {
+        width: 100%;
+        margin: 4px 0px;
+    }
+}

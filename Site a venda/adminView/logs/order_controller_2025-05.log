@@ -1,0 +1,232 @@
+[2025-05-10 17:36:09] Pedido criado
+Context: {
+    "order_id": 84,
+    "user_id": 8
+}
+[2025-05-10 17:36:09] Erro ao adicionar item ao pedido
+Context: {
+    "error": "ID do produto inv\u00e1lido",
+    "order_id": 84,
+    "product_id": null,
+    "trace": "#0 \/home\/storage\/e\/93\/bf\/cristaisgoldlar1\/public_html\/Site\/checkout.php(166): OrderController->addOrderItem(84, NULL, 1, NULL)\n#1 {main}"
+}
+[2025-05-10 17:36:09] Pedido atualizado
+Context: {
+    "order_id": 84,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-10 21:05:33] Pedido criado
+Context: {
+    "order_id": 85,
+    "user_id": 23
+}
+[2025-05-10 21:05:33] Erro ao adicionar item ao pedido
+Context: {
+    "error": "ID do produto inv\u00e1lido",
+    "order_id": 85,
+    "product_id": null,
+    "trace": "#0 \/home\/storage\/e\/93\/bf\/cristaisgoldlar1\/public_html\/Site\/checkout.php(166): OrderController->addOrderItem(85, NULL, 2, NULL)\n#1 {main}"
+}
+[2025-05-10 21:05:33] Pedido atualizado
+Context: {
+    "order_id": 85,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-10 21:31:51] Pedido criado
+Context: {
+    "order_id": 86,
+    "user_id": 23
+}
+[2025-05-10 21:31:51] Erro ao adicionar item ao pedido
+Context: {
+    "error": "ID do produto inv\u00e1lido",
+    "order_id": 86,
+    "product_id": null,
+    "trace": "#0 \/home\/storage\/e\/93\/bf\/cristaisgoldlar1\/public_html\/Site\/checkout.php(166): OrderController->addOrderItem(86, NULL, 7, NULL)\n#1 {main}"
+}
+[2025-05-10 21:31:51] Pedido atualizado
+Context: {
+    "order_id": 86,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-12 10:54:31] Pedido criado
+Context: {
+    "order_id": 87,
+    "user_id": 23
+}
+[2025-05-12 10:54:31] Erro ao adicionar item ao pedido
+Context: {
+    "error": "ID do produto inv\u00e1lido",
+    "order_id": 87,
+    "product_id": null,
+    "trace": "#0 \/home\/storage\/e\/93\/bf\/cristaisgoldlar1\/public_html\/Site\/checkout.php(166): OrderController->addOrderItem(87, NULL, 1, NULL)\n#1 {main}"
+}
+[2025-05-12 10:54:31] Pedido atualizado
+Context: {
+    "order_id": 87,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-12 15:20:33] Pedido criado
+Context: {
+    "order_id": 88,
+    "user_id": 23
+}
+[2025-05-12 15:20:33] Item adicionado ao pedido
+Context: {
+    "order_id": 88,
+    "product_id": 53,
+    "quantity": 2
+}
+[2025-05-12 15:20:33] Pedido atualizado
+Context: {
+    "order_id": 88,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-12 15:23:25] Pedido criado
+Context: {
+    "order_id": 89,
+    "user_id": 23
+}
+[2025-05-12 15:23:25] Item adicionado ao pedido
+Context: {
+    "order_id": 89,
+    "product_id": 53,
+    "quantity": 3
+}
+[2025-05-12 15:23:25] Pedido atualizado
+Context: {
+    "order_id": 89,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-12 16:03:49] Pedido criado
+Context: {
+    "order_id": 90,
+    "user_id": 24
+}
+[2025-05-12 16:03:49] Item adicionado ao pedido
+Context: {
+    "order_id": 90,
+    "product_id": 53,
+    "quantity": 2
+}
+[2025-05-12 16:03:49] Pedido atualizado
+Context: {
+    "order_id": 90,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-12 16:50:52] Pedido criado
+Context: {
+    "order_id": 91,
+    "user_id": 24
+}
+[2025-05-12 16:50:52] Item adicionado ao pedido
+Context: {
+    "order_id": 91,
+    "product_id": 53,
+    "quantity": 1
+}
+[2025-05-12 16:50:52] Pedido atualizado
+Context: {
+    "order_id": 91,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-12 20:15:13] Pedido criado
+Context: {
+    "order_id": 92,
+    "user_id": 23
+}
+[2025-05-12 20:15:13] Item adicionado ao pedido
+Context: {
+    "order_id": 92,
+    "product_id": 53,
+    "quantity": 1
+}
+[2025-05-12 20:15:13] Pedido atualizado
+Context: {
+    "order_id": 92,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-14 15:55:34] Pedido criado
+Context: {
+    "order_id": 93,
+    "user_id": 23
+}
+[2025-05-14 15:55:34] Item adicionado ao pedido
+Context: {
+    "order_id": 93,
+    "product_id": 53,
+    "quantity": 3
+}
+[2025-05-14 15:55:34] Pedido atualizado
+Context: {
+    "order_id": 93,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-14 19:56:19] Pedido criado
+Context: {
+    "order_id": 94,
+    "user_id": 23
+}
+[2025-05-14 19:56:19] Item adicionado ao pedido
+Context: {
+    "order_id": 94,
+    "product_id": 54,
+    "quantity": 1
+}
+[2025-05-14 19:56:19] Pedido atualizado
+Context: {
+    "order_id": 94,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}
+[2025-05-14 20:46:27] Pedido criado
+Context: {
+    "order_id": 95,
+    "user_id": 23
+}
+[2025-05-14 20:46:27] Item adicionado ao pedido
+Context: {
+    "order_id": 95,
+    "product_id": 54,
+    "quantity": 1
+}
+[2025-05-14 20:46:27] Pedido atualizado
+Context: {
+    "order_id": 95,
+    "affected_rows": 1,
+    "updated_fields": [
+        "tracking_code"
+    ]
+}

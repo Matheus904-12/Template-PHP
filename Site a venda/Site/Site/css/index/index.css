@@ -1,0 +1,672 @@
+/* Seção Inicial */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: gray;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+
+/* Seção Sobre Nós */
+.sobre-nos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 5%;
+}
+
+/* Texto */
+.sobre-nos .texto {
+    width: 55%;
+}
+
+.sobre-nos h2 {
+    font-size: 35px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.sobre-nos h2::after {
+    content: "";
+    width: 175px;
+    height: 4px;
+    background: #F3BA00;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    border-radius: 10%;
+}
+
+.sobre-nos p {
+    font-size: 16px;
+    color: #444;
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+/* Imagem */
+.sobre-nos .imagem {
+    width: 60%;
+    height: 350px;
+    background: #d3d3d3;
+    border-radius: 12px;
+}
+
+
+
+/* Produtos */
+.produtos {
+    padding: 5%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.produtos h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 10%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza o texto */
+}
+
+.produtos h2::after {
+    content: "";
+    width: 290px;
+    height: 4px;
+    background: #F3BA00;
+    position: absolute;
+    bottom: -8px;
+    border-radius: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centraliza a linha amarela */
+}
+
+.produtos p {
+    font-size: 16px;
+    color: #444;
+    margin-top: 25px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Filtros  */
+
+.button-group {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.button-group .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #ffffff;
+    color: #F3BA00;
+    font-style: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #000000a1;
+}
+
+.button-group .button.active {
+    background-color: #F3BA00;
+    color: #fff;
+}
+
+.button-group .button:hover {
+    background-color: #F3BA00;
+    color: #fff;
+}
+
+/* Produtos Cards - Carrossel */
+
+.container {
+    width: 100%;
+    padding: 60px 0;
+    
+}
+
+.slide-container {
+    margin: 0 30px;
+    overflow: hidden;
+}
+
+.swiper-pagination-bullet {
+    background-color: #333;
+}
+
+.card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 25%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+    margin-top: 15px;
+}
+
+.card-content .imagem {
+    background: #ccc;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.card .imagem {
+    width: 100%;
+    height: 200px; /* Ajuste a altura desejada */
+    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas */
+    margin-bottom: 10px; /* Espaço entre a imagem e o texto abaixo */
+  }
+  
+  .card .imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção da imagem e cobre o container */
+    display: block; /* Remove espaçamento extra abaixo da imagem */
+    border-radius: 8px; /* Opcional: Adiciona bordas arredondadas à imagem */
+    transition: transform 0.3s ease-in-out; /* Opcional: Adiciona uma transição suave para efeitos de hover */
+  }
+  
+  /* Opcional: Estilos adicionais para melhorar a aparência no hover */
+  .card:hover .imagem img {
+    transform: scale(1.05); /* Opcional: Adiciona um leve zoom no hover */
+  }
+
+.card-content p {
+    margin: 11.5px 0;
+    /* Reduz o espaçamento vertical */
+    font-size: 14px;
+    /* Tamanho de fonte equilibrado */
+    color: #333;
+    /* Cor neutra para o texto */
+}
+
+/* Estilização da avaliação */
+.card-content .avaliacao {
+    font-size: 13px;
+    color: #ffa500;
+    /* Cor laranja para destacar */
+    font-weight: bold;
+}
+
+/* Estilização do preço */
+.card-content .preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff9900;
+    margin-top: 5px;
+}
+
+/* Estilização do parcelamento */
+.card-content .parcelamento {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.detalhes-btn {
+    width: 100%;
+    padding: 10px;
+    background: #ffcc00;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Coneça mais produtos */
+
+.btn {
+    padding: 0.5em 2em;
+    /* Ajusta o padding para diminuir a altura */
+    height: 40px;
+    /* Define a altura fixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 15px;
+    color: #131313;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #F3BA00;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+}
+
+/* Centralizando o botão no meio da tela */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17vh;
+    /* Usa 100% da altura da tela */
+    width: 100%;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 120%;
+    background-color: #ff6700;
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+/* Seção de Pagamento */
+
+.pagamento {
+    align-items: center;
+    gap: 40px;
+    padding: 5%;
+    flex-wrap: wrap; /* Quebra para mobile */
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Mantém espaçamento entre os elementos */
+}
+
+/* Título */
+.pagamento h2 {
+    font-size: 35px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.pagamento h2::after {
+    content: "";
+    width: 430px;
+    height: 4px;
+    background: #F3BA00;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Texto */
+.pagamento p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-top: 25px;
+}
+
+.bandeiras-pagamento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 7px;
+    max-width: 400px;
+    margin-left: auto;
+    position: relative;
+    top: -160px; /* Ajuste o valor negativo para subir mais */
+}
+
+
+.bandeiras-pagamento img {
+    width: 70px;
+    height: auto;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+/* Ícones e Descrições */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    margin-top: 105px;
+    padding: 5%;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.info-box img.icon {
+    width: 119px;
+    height: 116px;
+}
+
+.info-box .info-text p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.divider {
+    width: 2px;
+    height: auto;
+    background: #ddd;
+    align-self: stretch;
+}
+
+/* Footer */
+footer {
+    color: #f5f5f5;
+    max-width: 2000px;
+    border-radius: 50px;
+    margin: 30px auto 0 auto;
+    /* Alinha com o container principal */
+    padding: 0px;
+    overflow: hidden;
+}
+
+.link {
+    text-decoration: none;
+}
+
+#content {
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+#content h1 {
+    margin-bottom: 0.75rem;
+}
+
+#social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#social_media .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #f5f5f5;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#social_media .link i {
+    font-size: 1.25rem;
+}
+
+#social_media .link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: #242424;
+}
+
+#facebook {
+    background-color: #242424;
+}
+
+#whatsapp {
+    background-color: #242424;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.list .link {
+    color: #a8a29e;
+    transition: all 0.4s;
+}
+
+.list .link:hover {
+    color: #F3BA00;
+}
+
+#subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#subscribe p {
+    color: #a8a29e;
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #F3BA00;
+    border: none;
+    color: #f5f5f5;
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+    /* Estilos do Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 12px;
+        width: 80%;
+        max-width: 800px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .close-modal:hover {
+        color: #555;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .modal-image {
+        flex: 1 1 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-image img {
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .modal-info {
+        flex: 1 1 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .modal-info h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .modal-price {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .modal-parcelas {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .modal-shop-btn {
+        display: inline-block;
+        background-color: #F5B500;
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .modal-shop-btn:hover {
+        background-color: #D9A000;
+    }
+
+    /* Responsividade para mobile */
+    @media (max-width: 768px) {
+        .modal-content {
+            width: 90%;
+            margin: 20% auto;
+            padding: 15px;
+        }
+        
+        .modal-body {
+            flex-direction: column;
+        }
+        
+        .modal-image {
+            margin-bottom: 20px;
+        }
+        
+        .modal-info h3 {
+            font-size: 20px;
+        }
+        
+        .modal-price {
+            font-size: 24px;
+        }
+    }

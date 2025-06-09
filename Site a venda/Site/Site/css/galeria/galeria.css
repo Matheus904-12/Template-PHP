@@ -1,0 +1,276 @@
+
+/* Seção Inicial */
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: gray;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+/* ----- SCROLL ----- */
+
+.scroll-btn {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 175px;
+  height: 50px;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--text-color-second);
+  background: var(--color-white);
+  border-radius: 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.scroll-btn::after {
+  background-color: #fff;
+}
+
+.scroll-btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* Correção no texto */
+.scroll-btn p {
+  margin: 0;
+  /* Remove qualquer espaçamento interno */
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+
+.scroll-btn i {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ícones Sociais */
+.social-icons {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  opacity: 0.7;
+}
+
+/* Botão WhatsApp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.whatsapp-btn img {
+  width: 55px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+.portfolio{
+  width: 100%;
+  padding: 5%;
+
+}
+
+.portfolio .section-head {
+  max-width: 700px;
+  margin: 0px auto 25px;
+  text-align: center;
+  margin-top: 95px;
+}
+
+.section-head h1 {
+  position: relative;
+  font-size: 32px;
+  margin: 10px 0px 30px;
+  color: #F3BA00;
+}
+
+.button-group {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.button-group .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #ffffff;
+  color: #F3BA00;
+  font-style: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #000000a1;
+}
+
+.button-group .button.active {
+  background-color: #F3BA00;
+  color: #fff;
+}
+
+.button-group .button:hover {
+  background-color: #F3BA00;
+  color: #fff;
+}
+
+div.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.gallery .item {
+  position: relative;
+  margin: 4px;
+  width: calc(33.33% - 8px);
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: 0.3s;
+  border-radius: 25px;
+}
+
+div.gallery .item:hover img {
+  transform: scale(1.15);
+  border-radius: 25px;
+}
+
+.item .overlay {
+  position: absolute;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(243, 186, 0, 0.699);
+  color: #fff;
+  padding: 15px;
+  overflow: hidden;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+  border-radius: 25px;
+}
+
+.item .overlay a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  border-radius: 25px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  min-height: 400px; /* Ajuste conforme necessário */
+  transition: opacity 0.3s ease-in-out;
+}
+.item {
+  width: calc(33.33% - 10px); /* Ajuste para o tamanho correto */
+  max-width: 100%;
+  min-width: 150px;
+  height: auto;
+  overflow: hidden;
+}
+
+
+.item .overlay a:hover {
+  background-color: #fff;
+  color: #F3BA00;
+  border-radius: 25px;
+}
+
